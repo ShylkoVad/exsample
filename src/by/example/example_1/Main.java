@@ -16,7 +16,7 @@ public class Main {
 //        nextFloat(): считывает введенное число float
 //        nextShort(): считывает введенное число short
 
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //выделение памяти
 
 
 
