@@ -32,8 +32,5 @@ public class Main {
         String str = input.next();
 
         System.out.println(str + " получил сумму чисел " + summa);
-
-
-
     }
 }
