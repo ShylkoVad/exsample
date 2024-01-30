@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(sum(2, 56));
+
+        System.out.println(isNegative(20));
     }
 
     public static int sum(int a, int b) {
@@ -13,5 +15,10 @@ public class Main {
             sum = sum;
         }
         return sum;
+    }
+
+    public static boolean isNegative(int a) {
+
+        return a <= 0;
     }
 }
