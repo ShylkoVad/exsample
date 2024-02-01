@@ -41,6 +41,39 @@ public class Main {
          * Реализовать функцию range_min_max, которая принимает массив array(int[]), числа min и max.
          * Функция должна вернуть массив из элементов array, где каждый элемент больше min включительно и меньше max включительно.
          */
+        System.out.println(Arrays.toString(rangeMinMax(new int[]{7, 5, 9, 1, 4}, 3, 5)));
+
+        /**
+         * Реализовать функцию slice, которая принимает массив array(int[]), числа from и to.
+         * Функция должна вернуть элементы массива array от индекса from (включая from) и до to.
+         */
+        System.out.println(Arrays.toString(slice(new int[]{7, 5, 9, 1, 4}, 0, 4)));
+
+        /**
+         * Реализовать функцию swap, которая принимает массив array(int[]), числа i и j.
+         * Функция должна поменять местами в массиве два числа по указанным индексам i и j.
+         */
+        swap(new int[]{7, 5, 9, 1, 4}, 0, 1);
+
+        /**
+         * Реализовать функцию reverse, которая принимает массив array(int[]).
+         * Функция должна перевернуть массив, то есть первый элемент становится последним, второй предпоследним, ...,
+         * последний элемент первым.
+         */
+        reverse(new int[]{7, 5, 9, 1, 4});
+
+        /**
+         * Реализовать функцию join, которая принимает массивы array1 и array2.
+         * Функция должна объединить оба массива в один и вернуть новый сложившийся.
+         */
+        System.out.println(Arrays.toString(join(new int[]{7, 5, 9, 1, 4}, new int[]{1, 2, 3, 4, 5})));
+
+        /**
+         * Реализовать функцию sort, которая принимает массив array(int[]). Функция должна отсортировать массив по возрастанию.
+         * Подсказка: https://habr.com/ru/post/204600/
+         * Запрещено использовать Arrays.sort.
+         */
+        sort(new int[]{7, 5, 9, 1, 4});
 
     }
 
@@ -110,6 +143,109 @@ public class Main {
             mean = mean + array[i];
         }
         return mean / array.length;
+    }
+
+    public static int[] rangeMinMax(int[] array, int min, int max) {
+
+        int n = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= min && array[i] <= max) {
+                n = n + 1;
+            }
+        }
+
+        int[] arrayNew = new int[n];
+
+        for (int i = 0, j = 0; i < array.length; i++) {
+            if (array[i] >= min && array[i] <= max) {
+                arrayNew[j] = array[i];
+                j++;
+
+            }
+        }
+//        System.out.println("длина нового массива - " + n);
+//        System.out.println(Arrays.toString(array));
+
+        return arrayNew;
+    }
+
+    public static int[] slice(int[] array, int from, int to) {
+
+        int n = to - from;
+        System.out.println(n);
+        int[] arrayNew = new int[n];
+
+        for (int i = from, j = 0; i < to; i++) {
+            arrayNew[j] = array[i];
+            j++;
+        }
+
+        return arrayNew;
+    }
+
+    public static void swap(int[] array, int i, int j) {
+
+        if (array.length != 0 && i >= 0 && j >= 0) {
+
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+
+            System.out.println(Arrays.toString(array));
+        }
+    }
+
+    public static void reverse(int[] array) {
+
+        if (array.length != 0) {
+            for (int i = 0, j = 1; i < array.length / 2; i++) {
+                int temp = array.length - j;
+                int q;
+                q = array[temp];
+                array[temp] = array[i];
+                array[i] = q;
+                j++;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static int[] join(int[] array1, int[] array2) {
+
+        int[] array = new int[array1.length + array2.length];
+
+        if (array1.length > 0 && array2.length > 0) {
+            for (int i = 0; i < array1.length; i++) {
+                array[i] = array1[i];
+            }
+            for (int j = 0; j < array2.length; j++) {
+                array[array1.length + j] = array2[j];
+            }
+        } else if (array1.length > 0 && array2.length == 0) {
+            for (int i = 0; i < array1.length; i++) {
+                array[i] = array1[i];
+            }
+        } else {
+            for (int i = 0; i < array2.length; i++) {
+                array[i] = array2[i];
+            }
+        }
+        return array;
+    }
+
+    public static void sort(int[] array) {
+
+        int arrayI = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] <= arrayI) {
+                int temp;
+                temp = array[i];
+                array[i] = array[i];
+
+
+            }
+        }
+
     }
 
 
