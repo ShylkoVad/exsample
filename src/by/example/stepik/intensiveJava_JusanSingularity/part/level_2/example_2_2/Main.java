@@ -1,4 +1,4 @@
-package by.example.stepik.intensiveJava_JusanSingularity.part_1.level_2.example_2_2;
+package by.example.stepik.intensiveJava_JusanSingularity.part.level_2.example_2_2;
 
 public class Main {
 

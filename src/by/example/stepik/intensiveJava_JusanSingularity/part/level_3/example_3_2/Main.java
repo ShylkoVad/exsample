@@ -1,4 +1,4 @@
-package by.example.stepik.intensiveJava_JusanSingularity.part_1.level_3.example_3_2;
+package by.example.stepik.intensiveJava_JusanSingularity.part.level_3.example_3_2;
 
 import java.util.Arrays;
 
