@@ -26,7 +26,7 @@ public class Main {
          * Функция должна вернуть true, если substr находится в str. Вернуть false в противоположном случае.
          * Если длина substr равна нулю, то возвращать true.
          */
-        contains(new char[]{'s', 'a', 'l', 'e', 'm'}, new char[]{'l', 'e', 'm'});
+        System.out.println(contains(new char[]{'s', 'a', 'l', 'e', 'm'}, new char[]{'l', 'e', 'm'}));
 
     }
 
