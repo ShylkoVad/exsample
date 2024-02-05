@@ -28,6 +28,13 @@ public class Main {
          */
         System.out.println(contains(new char[]{'s', 'a', 'l', 'e', 'm'}, new char[]{'l', 'e', 'm'}));
 
+        /**
+         * Реализовать функцию parseInt, которая принимает массив символов str.
+         * Функция должна перевести строку в число int. Верните получившееся число.
+         * При тестировании, будут передаваться валидные числовые строки.
+         */
+        System.out.println(parseInt(new char[]{'-', '1', '2', '3'}));
+
     }
 
     public static void toLowerCase(char[] str) {
@@ -76,6 +83,14 @@ public class Main {
                     }
                 }
             }
+        }
+        return result;
+    }
+
+    public static int parseInt(char[] str) {
+        int result = 0;
+        for (int i = 0; i < str.length; i++) {
+//            result = char[i];
         }
         return result;
     }
