@@ -2,6 +2,8 @@ package by.example.stepik.intensiveJava_JusanSingularity.part.level_7.example_7_
 
 public class Node {
     public static void main(String[] args) {
+        Node node = new Node();
+        
         /**
          * В этом задании разработаем базовый класс Node, который образовывает Linked List.
          * Создайте класс Node со следующими полями:
@@ -15,7 +17,7 @@ public class Node {
          * списка и возвращает получившийся результат в виде связанного списка с новым элементом.
          * Если node передается как null, то вернуть Node состоящий из newData.
          */
-        System.out.println(addFirst(new Node(2), 1));
+        System.out.println(addFirst(new Node(2) , 1));
 
         /**
          * Реализуйте метод size, который возвращает количество элементов в связанном списке.
@@ -36,6 +38,9 @@ public class Node {
     public Node(int data) {
         this.data = data;
         this.next = null;
+    }
+
+    public Node() {
     }
 
     public static Node addFirst(Node node, int newData) {
