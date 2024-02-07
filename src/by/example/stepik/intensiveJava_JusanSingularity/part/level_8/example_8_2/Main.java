@@ -1,5 +1,6 @@
 package by.example.stepik.intensiveJava_JusanSingularity.part.level_8.example_8_2;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -78,6 +79,7 @@ public class Main {
          * Реализуйте функцию findDuplicates, которая возвращает дублирующие элементы из переданного массива.
          * Вернуть пустой массив, если нет дубликатов.
          */
+        System.out.println(Arrays.toString(findDuplicates(new int[]{1, 2, 3, 5, 1, 2})));
 
     }
 
@@ -125,7 +127,7 @@ public class Main {
     }
 
     public static int[] findDuplicates(int[] array) {
-        // Написать решение сюда ↓
+
 
         return null;
     }

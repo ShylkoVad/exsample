@@ -7,26 +7,26 @@ public class Main {
          *Реализовать функцию toLowerCase, которая принимает массив символов str.
          * Функция должна перевести все буквы в нижний регистр.
          */
-        toLowerCase(new char[]{'H', 'e', 'l', 'l', 'o'});
+//        toLowerCase(new char[]{'H', 'e', 'l', 'l', 'o'});
 
         /**
          * Реализовать функцию toUpperCase, которая принимает массив символов str.
          * Функция должна перевести все буквы в верхний регистр.
          */
-        toUpperCase(new char[]{'H', 'e', 'l', 'l', 'o'});
+//        toUpperCase(new char[]{'H', 'e', 'l', 'l', 'o'});
 
         /**
          * Реализовать функцию concat, которая принимает массивы символов str1 и str2.
          * Функция должна объединить оба массива в один и вернуть получившийся.
          */
-        System.out.println(concat(new char[]{'h', 'e', 'l', 'l', 'o'}, new char[]{' ', 'w', 'o', 'r', 'l', 'd'}));
+//        System.out.println(concat(new char[]{'h', 'e', 'l', 'l', 'o'}, new char[]{' ', 'w', 'o', 'r', 'l', 'd'}));
 
         /**
          * Реализовать функцию contains, которая принимает массивы символов str и substr.
          * Функция должна вернуть true, если substr находится в str. Вернуть false в противоположном случае.
          * Если длина substr равна нулю, то возвращать true.
          */
-        System.out.println(contains(new char[]{'s', 'a', 'l', 'e', 'm'}, new char[]{'l', 'e', 'm'}));
+//        System.out.println(contains(new char[]{'s', 'a', 'l', 'e', 'm'}, new char[]{'l', 'a', 'm'}));
 
         /**
          * Реализовать функцию parseInt, которая принимает массив символов str.
@@ -64,23 +64,26 @@ public class Main {
     }
 
     public static boolean contains(char[] str, char[] substr) {
-        boolean result = false;
 
+        boolean result = true;
         int c = 0;
         if (substr.length == 0) {
-            result = true;
         } else if (substr.length > str.length) {
             result = false;
         } else {
-            for (int i = 0; i < substr.length; i++) {
-                for (int j = c; j < str.length; j++) {
-                    if (substr[i] == str[j]) {
-                        result = true;
-                        c = j + 1;
-                        break;
-                    } else {
-                        result = false;
+            for (char value : substr) {
+                if (result) {
+                    for (int j = c; j < str.length; j++) {
+                        if (value == str[j]) {
+                            result = true;
+                            c = j + 1;
+                            break;
+                        } else {
+                            result = false;
+                        }
                     }
+                } else {
+                    return false;
                 }
             }
         }
@@ -88,10 +91,12 @@ public class Main {
     }
 
     public static int parseInt(char[] str) {
-        int result = 0;
+
+        String temp = "";
         for (int i = 0; i < str.length; i++) {
-//            result = char[i];
+            char c = str[i];
         }
+        int result = Integer.parseInt(temp);
         return result;
     }
 

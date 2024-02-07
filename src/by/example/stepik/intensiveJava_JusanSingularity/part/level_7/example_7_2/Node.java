@@ -1,50 +1,29 @@
 package by.example.stepik.intensiveJava_JusanSingularity.part.level_7.example_7_2;
 
 public class Node {
-    public static void main(String[] args) {
-        Node node = new Node();
-        
-        /**
-         * В этом задании разработаем базовый класс Node, который образовывает Linked List.
-         * Создайте класс Node со следующими полями:
-         * публичный числовой data
-         * публичный next типа Node
-         * Добавьте конструктор, который принимает data и присваивает его к соответсвующему полю.
-         */
 
-        /**
-         * Реализуйте метод addFirst, который добавляет новый элемент в начало связанного
-         * списка и возвращает получившийся результат в виде связанного списка с новым элементом.
-         * Если node передается как null, то вернуть Node состоящий из newData.
-         */
-        System.out.println(addFirst(new Node(2) , 1));
 
-        /**
-         * Реализуйте метод size, который возвращает количество элементов в связанном списке.
-         */
-        System.out.println(size(new Node(2)));
+    public int data;  // данные
+    public Node next;  // указатель на следующий узел
+    public Node head; // голова списка
 
-        /**
-         * Реализуйте метод getLast, который возвращает последний элемент в связанном списке.
-         * Если node передается как null, то вернуть -1.
-         */
-//        System.out.println(getLast(new Node(3)));
-
-    }
-
-    public int data;
-    public Node next;
-
-    public Node(int data) {
+    public Node(int data) { //конструктор, чтобы сразу инициализировать узел с заданным значением.
         this.data = data;
-        this.next = null;
+        this.next = null; // когда мы создаем узел, ссылка на следующий элемент будет null, так как он еще пуст
     }
+
+
 
     public Node() {
+        head = null;
+    }
+
+    private boolean isEmpty() {
+        return head == null;
     }
 
     public static Node addFirst(Node node, int newData) {
-        Node temp = new Node(newData);
+        Node temp = new Node(newData); // создаем новый узел
         temp.next = node;
         node = temp;
         return node;
