@@ -44,7 +44,26 @@ public class Main {
          * Программа получает на вход три числа: a, b, n.
          * Программа должна вывести два числа: стоимость покупки в рублях и копейках.
          */
-        myProgramm_5();
+        //myProgramm_5();
+
+        /**
+         * Дано произвольное положительное натуральное число. Найдите его последнюю цифру.
+         */
+        // myProgramm_6();
+
+        /**
+         * Дано трехзначное число. Найдите сумму его цифр.
+         */
+        //myProgramm_7();
+
+        /**
+         * Длина Московской кольцевой автомобильной дороги —109 километров. Байкер Вася стартует с нулевого километра
+         * МКАД и едет со скоростью v километров в час. На какой отметке он остановится через t часов?
+         * Программа получает на вход значения v и t. Если v>0, то Вася движется в положительном направлении по МКАД,
+         * если же значение v<0, то в отрицательном.
+         * Программа должна вывести целое число от 0 до 108 — номер отметки, на которой остановится Вася.
+         */
+        myProgramm_8();
     }
 
     public static void myProgram() {
@@ -90,10 +109,42 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int n = sc.nextInt();
-        int result = a * n * 100 + b * n ;
 
-        System.out.println(result);
+        int price = a * 100 + b;
+        int priceFull = price * n;
+        int priceRub = priceFull / 100;
+        int priceKopecks = priceFull % 100;
 
+        System.out.println(priceRub + " " + priceKopecks);
+    }
+
+    public static void myProgramm_6() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+
+        if (a < 10 && a >= 0) {
+            System.out.println(a);
+        } else {
+            System.out.println(a % 10);
+        }
+    }
+
+    public static void myProgramm_7() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println((a / 100) + (a % 100) / 10 + (a % 10));
+    }
+
+    public static void myProgramm_8() {
+        Scanner sc = new Scanner(System.in);
+        int v = sc.nextInt();
+        int t = sc.nextInt();
+        int s = Math.abs(t * v);
+       if (s < 109) {
+           System.out.println(s);
+       } else {
+           System.out.println(s - 109);
+       }
     }
 
 }
