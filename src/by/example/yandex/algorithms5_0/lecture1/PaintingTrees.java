@@ -18,8 +18,7 @@ public class PaintingTrees {
         for (int i = 0, j = 0; i < (M * 2 + 1); i++) {
             pv.add(Q + M - (j++));
         }
-        List<Integer> listWithoutDuplicates =
-                pv.stream().distinct().toList();
+        List<Integer> listWithoutDuplicates = pv.stream().distinct().toList();
         System.out.println(listWithoutDuplicates.size());
     }
 }
