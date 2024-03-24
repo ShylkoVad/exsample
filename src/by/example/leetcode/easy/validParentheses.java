@@ -24,15 +24,15 @@ public class validParentheses {
             char[] str = s.toCharArray();
             char one = s.charAt(0);
 
-            if (one == '(' || one == '{' || one == '[') {
-                for (int i = 1; i < s.length() / 2; i++) {
-                    while (s.charAt(i))
-                    result = true;
-
-                }
-            } else {
-                result = false;
-            }
+//            if (one == '(' || one == '{' || one == '[') {
+//                for (int i = 1; i < s.length() / 2; i++) {
+//                    while (s.charAt(i))
+//                    result = true;
+//
+//                }
+//            } else {
+//                result = false;
+//            }
         }
         return result;
 
