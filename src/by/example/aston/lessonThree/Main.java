@@ -20,17 +20,10 @@ public class Main {
                         new Book("Book 7", 180, 2003),
                         new Book("Book 8", 220, 2002),
                         new Book("Book 9", 350, 2021),
-                        new Book("Book 10", 500, 1990))),
-                new Student(List.of(
-                        new Book("Book 11", 120, 2000),
-                        new Book("Book 12", 250, 2015),
-                        new Book("Book 13", 300, 2018),
-                        new Book("Book 14", 400, 2019),
-                        new Book("Book 15", 220, 2022)))
+                        new Book("Book 10", 500, 1990)))
         );
 
-        // 3.1 - Вывод студентов
-        students.forEach(System.out::println);
+        students.forEach(System.out::println); // 3.1 - Вывод студентов
 
         students.stream()  // 3.2 - Получение списка книг для каждого студента с использованием одного стрима
                 .flatMap(student -> student.getBooks().stream())
@@ -44,6 +37,5 @@ public class Main {
                         year -> System.out.println("Год выпуска найденной книги: " + year),
                         () -> System.out.println("Книга отсутствует") // 3.10 - Сообщение об отсутствии
                 );
-
     }
 }
