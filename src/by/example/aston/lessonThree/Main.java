@@ -23,19 +23,19 @@ public class Main {
                         new Book("Book 10", 500, 1990)))
         );
 
-        students.forEach(System.out::println); // 3.1 - Вывод студентов
-
-        students.stream()  // 3.2 - Получение списка книг для каждого студента с использованием одного стрима
+        // Использование стрима для вывода студентов
+        students.stream()
+                .peek(student -> System.out.println("Студент: " + student)) // Вывод информации о каждом студенте
                 .flatMap(student -> student.getBooks().stream())
-                .sorted(Comparator.comparingInt(Book::getPages)) // 3.4 - Сортировка по количеству страниц
-                .distinct() // 3.5 - Уникальные книги
-                .filter(book -> book.getYear() > 2000) // 3.6 - Книги после 2000 года
-                .limit(3) // 3.7 - Ограничение на 3 элемента
-                .map(Book::getYear) // 3.8 - Получение годов выпуска
-                .findFirst() // 3.9 - Получение первого года выпуска
+                .sorted(Comparator.comparingInt(Book::getPages)) // Сортировка по количеству страниц
+                .distinct() // Уникальные книги
+                .filter(book -> book.getYear() > 2000) // Книги после 2000 года
+                .limit(3) // Ограничение на 3 элемента
+                .map(Book::getYear) // Получение годов выпуска
+                .findFirst() // Получение первого года выпуска
                 .ifPresentOrElse(
                         year -> System.out.println("Год выпуска найденной книги: " + year),
-                        () -> System.out.println("Книга отсутствует") // 3.10 - Сообщение об отсутствии
+                        () -> System.out.println("Книга отсутствует") // Сообщение об отсутствии
                 );
     }
 }
